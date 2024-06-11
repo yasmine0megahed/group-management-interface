@@ -19,11 +19,17 @@ padding: 10px;
     color: white;
     font-weight: 700;
     font-size: 20px;
+    overflow-wrap: break-word; /* Break long words and wrap them */
+    word-wrap: break-word;     /* For legacy support */
+    word-break: break-all;     /* Break long words at arbitrary points */
 }
 .content{
     color: orange;
     font-size: 17px;
     padding-left: 19px;
+    overflow-wrap: break-word; /* Break long words and wrap them */
+    word-wrap: break-word;     /* For legacy support */
+    word-break: break-all;     /* Break long words at arbitrary points */
 }
 .buttons-container{
     display: flex;

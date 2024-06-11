@@ -37,8 +37,11 @@ export class EditComponent {
   handleregisterform(registerform: any) {
     const updatedValue = registerform.value;
     updatedValue.groupDate = this.storeData[this.groupId].groupDate;
+    updatedValue.groupId = this.groupId;
     this.storeData[this.groupId] = updatedValue;
     localStorage.setItem('storeData', JSON.stringify(this.storeData));
     alert('Updated item successfully');
+    //navigate to home page
+    this.router.navigate(['/']);
   }
 }

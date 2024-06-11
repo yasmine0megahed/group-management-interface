@@ -2,6 +2,9 @@
     color: white;
     font-weight: 700;
     font-size: 20px;
+    overflow-wrap: break-word; /* Break long words and wrap them */
+    word-wrap: break-word;     /* For legacy support */
+    word-break: break-all;     /* Break long words at arbitrary points */
   }
   .main-container{
     display: flex;
@@ -21,6 +24,9 @@
     
   }
   .content {
+    overflow-wrap: break-word; /* Break long words and wrap them */
+    word-wrap: break-word;     /* For legacy support */
+    word-break: break-all;     /* Break long words at arbitrary points */
     color: orange;
     font-size: 17px;
     padding-left: 19px;
