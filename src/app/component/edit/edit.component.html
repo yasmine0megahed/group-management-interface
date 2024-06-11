@@ -1,0 +1,51 @@
+<div class="main-container">
+    <div class="group-container">
+        <form #registerform="ngForm" (ngSubmit)="handleregisterform(registerform)">
+            <!-- group name input start-->
+            <div class="name-container">
+                <label class="title" for="groupName"> Name</label>
+                <br>
+                <input type="text" class="content" name="groupName" [(ngModel)]="details.groupName" ngModel required
+                    minlength="3" #registerName="ngModel"> @if (registerName.touched&&registerName.invalid) {
+                <div class="form_text text-danger">
+                    @if (registerName.errors?.['required']) {
+                    <small class="warning-msg">this field is required</small>
+                    }
+                    @if (registerName.errors?.['minlength']) {
+                    <small class="warning-msg">small length</small>
+                    }
+                </div>
+                }
+            </div>
+            <!-- group name input end-->
+
+            <br>
+            <!-- group description input start-->
+            <div class="name-container">
+                <label class="title" for="groupDescription">Description</label>
+                <br>
+                <textarea class="content" name="groupDescription" ngModel required minlength="10"
+                    [(ngModel)]="details.groupDescription" #registerDescription="ngModel">
+
+    </textarea>
+                @if (registerDescription.touched&&registerDescription.invalid) {
+                <div class="form_text text-danger">
+                    @if (registerDescription.errors?.['required']) {
+                    <small class="warning-msg">this field is required</small>
+                    }
+                    @if (registerDescription.errors?.['minlength']) {
+                    <small class="warning-msg">small length</small>
+                    }
+                </div>
+                }
+            </div>
+            <!-- group description input end-->
+            <br>
+            <!-- submit button start-->
+            <div class="buttons-container">
+                <button type="submit" class="button-edit">update</button>
+            </div>
+            <!-- submit button end-->
+        </form>
+    </div>
+</div>

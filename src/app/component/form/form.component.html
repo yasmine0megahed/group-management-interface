@@ -1,0 +1,53 @@
+<div class="main-container">
+    <div class="group-container">
+        <form #registerform="ngForm" (ngSubmit)="handleregisterform(registerform)">
+            <!-- group ID input start-->
+            <input type="hidden" name="groupId" [(ngModel)]="groupId" value="{{groupId}}" ngModel>
+            <!-- group ID input end-->
+            <!-- group date input start-->
+            <input type="hidden" name="groupDate" ngModel [(ngModel)]="currentDate" value="{{currentDate}}">
+            <!-- group date input end-->
+            <!-- group name input start-->
+            <div class="name-container">
+                <label class="title" for="groupName">Group name</label>
+                <input class="content" type="text" name="groupName" placeholder="Type group name" ngModel required
+                    minlength="3" #registerName="ngModel"> @if (registerName.touched&&registerName.invalid) {
+                <div class="form_text text-danger">
+                    @if (registerName.errors?.['required']) {
+                    <small class="warning-msg">this field is required</small>
+                    }
+                    @if (registerName.errors?.['minlength']) {
+                    <small class="warning-msg">small length</small>
+                    }
+                </div>
+                }
+            </div>
+            <!-- group name input end-->
+            <br>
+            <!-- group description input start-->
+            <div>
+                <label class="title" for="groupDescription">Description</label>
+                <textarea class="content" name="groupDescription" ngModel required minlength="10"
+                    #registerDescription="ngModel">
+                </textarea>
+                @if (registerDescription.touched&&registerDescription.invalid) {
+                <div class="form_text text-danger">
+                    @if (registerDescription.errors?.['required']) {
+                    <small class="warning-msg">this field is required</small>
+                    }
+                    @if (registerDescription.errors?.['minlength']) {
+                    <small class="warning-msg">small length</small>
+                    }
+                </div>
+                }
+            </div>
+            <!-- group description input end-->
+            <br>
+            <!-- submit button start-->
+            <div class="buttons-container">
+                <button class="button-edit" type="submit" [disabled]="registerform.invalid">Submit</button>
+            </div>
+            <!-- submit button end-->
+        </form>
+    </div>
+</div>

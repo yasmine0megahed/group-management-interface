@@ -1,0 +1,38 @@
+<div class="groups-container">
+    @for (data of objectKeys(storeData); track $index) {
+    <div class="group-container">
+        <div class="name-container">
+            <div class="title">
+                Name:
+            </div>
+            <div class="content">
+                {{ storeData[data].groupName }}
+            </div>
+        </div>
+        <div class="des-container">
+            <div class="title">
+                Description:
+            </div>
+            <div class="content">
+                {{ storeData[data].groupDescription }}
+            </div>
+        </div>
+        <div class="date-container">
+            <div class="title">
+                Creation date:
+            </div>
+            <div class="content">
+                {{ storeData[data].groupDate }}
+            </div>
+        </div>
+        <div class="buttons-container">
+            <div >
+                <button class="button-edit" (click)="editGroup(storeData[data].groupId )">Edit</button>
+            </div>
+            <div >
+                <button class="button-edit" (click)="deleteGroup(storeData[data].groupId )">Delete</button>
+            </div>
+        </div>
+    </div>
+    }
+</div>
