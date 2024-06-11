@@ -1,3 +1,4 @@
+@if (objectKeys(storeData).length > 0) {
 <div class="groups-container">
     @for (data of objectKeys(storeData); track $index) {
     <div class="group-container">
@@ -26,13 +27,20 @@
             </div>
         </div>
         <div class="buttons-container">
-            <div >
+            <div>
                 <button class="button-edit" (click)="editGroup(storeData[data].groupId )">Edit</button>
             </div>
-            <div >
+            <div>
                 <button class="button-edit" (click)="deleteGroup(storeData[data].groupId )">Delete</button>
             </div>
         </div>
     </div>
     }
 </div>
+}@else {
+
+    <div class="empty-container">
+        No groups 
+    </div>
+
+}

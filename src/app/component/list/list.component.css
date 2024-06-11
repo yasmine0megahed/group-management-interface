@@ -36,3 +36,9 @@ padding: 10px;
     border-radius:0 20px ;
     font-weight: 700;
 }
+
+.empty-container{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+}
